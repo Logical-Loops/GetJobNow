@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Learn about GetJobNow, our mission, team, and values. We’re here to help you find meaningful employment and advance your career.">
+  <meta name="keywords" content="about getjobnow, career advice, job search platform, our mission, our team">
+  <meta name="author" content="GetJobNow Team">
+  <title>GetJobNow - About Us</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #1e3a8a;
+      --secondary-color: #f97316;
+      --text-color: #2d3748;
+      --bg-color: #f9fafb;
+      --card-bg: #fff;
+      --border-color: #d1d5db;
+      --ad-bg: #f1f5f9;
+      --ad-text: #6b7280;
+      --footer-bg: #1f2937;
+      --footer-text: #d1d5db;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+    }
+
+    [data-theme="dark"] {
+      --primary-color: #60a5fa;
+      --secondary-color: #fb923c;
+      --text-color: #e5e7eb;
+      --bg-color: #1f2937;
+      --card-bg: #374151;
+      --border-color: #4b5563;
+      --ad-bg: #2d3748;
+      --ad-text: #9ca3af;
+      --footer-bg: #111827;
+      --footer-text: #d1d5db;
+      --shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+      transition: var(--transition);
+    }
+
+    a {
+      text-decoration: none;
+      transition: var(--transition);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header {
+      background: linear-gradient(90deg, var(--primary-color), #3b82f6);
+      padding: 20px 0;
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .logo span {
+      color: var(--secondary-color);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin-left: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      font-size: 16px;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: var(--transition);
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background-color: var(--secondary-color);
+      color: #fff;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .theme-toggle {
+      background: none;
+      border: none;
+      color: #fff;
+      font-size: 20px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .theme-toggle:hover {
+      color: var(--secondary-color);
+    }
+
+    .search-bar {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+      position: relative;
+    }
+
+    .search-bar input {
+      width: 100%;
+      padding: 12px 40px 12px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 16px;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .search-bar input:focus {
+      outline: none;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .search-bar i {
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-color);
+    }
+
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--card-bg);
+      border-radius: 8px;
+      box-shadow: var(--shadow);
+      margin-top: 5px;
+      z-index: 10;
+      display: none;
+    }
+
+    .search-bar input:focus + .search-suggestions {
+      display: block;
+    }
+
+    .search-suggestions a {
+      display: block;
+      padding: 10px 20px;
+      color: var(--text-color);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .search-suggestions a:hover {
+      background-color: var(--border-color);
+    }
+
+    .ad-space {
+      background-color: var(--ad-bg);
+      text-align: center;
+      padding: 25px;
+      margin: 25px 0;
+      border-radius: 10px;
+      border: 1px dashed var(--border-color);
+      color: var(--ad-text);
+      font-size: 14px;
+      transition: var(--transition);
+    }
+
+    .ad-space:hover {
+      transform: scale(1.02);
+    }
+
+    .main-content {
+      display: flex;
+      gap: 30px;
+      margin: 30px 0;
+    }
+
+    .content {
+      flex: 3;
+    }
+
+    .sidebar {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .about-section,
+    .team-section,
+    .values-section {
+      margin-bottom: 40px;
+    }
+
+    .about-section h2,
+    .team-section h2,
+    .values-section h2,
+    .sidebar h3 {
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      color: var(--primary-color);
+    }
+
+    .about-section p {
+      font-size: 16px;
+      color: var(--text-color);
+      margin-bottom: 15px;
+    }
+
+    .team-grid,
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .team-member {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      text-align: center;
+      padding: 20px;
+      transition: var(--transition);
+    }
+
+    .team-member:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-member img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+      margin-bottom: 15px;
+    }
+
+    .team-member h4 {
+      font-size: 18px;
+      margin-bottom: 5px;
+      color: var(--text-color);
+    }
+
+    .team-member p {
+      font-size: 14px;
+      color: var(--ad-text);
+    }
+
+    .value-card {
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      text-align: center;
+      transition: var(--transition);
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .value-card i {
+      font-size: 30px;
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
+
+    .value-card h4 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      color: var(--text-color);
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: var(--text-color);
+    }
+
+    .sidebar-section {
+      background-color: var(--card-bg);
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }
+
+    .sidebar-section p {
+      margin-bottom: 15px;
+      color: var(--text-color);
+      font-size: 15px;
+    }
+
+    .sidebar-section ul {
+      list-style: none;
+    }
+
+    .sidebar-section ul li {
+      margin-bottom: 10px;
+    }
+
+    .sidebar-section ul li a {
+      color: var(--text-color);
+      font-size: 15px;
+      transition: var(--transition);
+    }
+
+    .sidebar-section ul li a:hover,
+    .sidebar-section ul li a:focus {
+      color: #3b82f6;
+    }
+
+    .sidebar-section input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 14px;
+      background-color: var(--card-bg);
+      color: var(--text-color);
+    }
+
+    .sidebar-section button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .sidebar-section button:hover,
+    .sidebar-section button:focus {
+      background-color: var(--primary-color);
+    }
+
+    .popular-article {
+      display: flex;
+      gap: 15px;
+      padding: 15px;
+      margin-bottom: 15px;
+      background-color: var(--card-bg);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .popular-article:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .popular-article img {
+      width: 70px;
+      height: 70px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+    }
+
+    footer {
+      background-color: var(--footer-bg);
+      color: var(--footer-text);
+      padding: 40px 0;
+    }
+
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 30px;
+    }
+
+    .footer-content h3 {
+      font-size: 20px;
+      margin-bottom: 20px;
+      color: var(--secondary-color);
+    }
+
+    .footer-content p,
+    .footer-content a {
+      color: var(--footer-text);
+      font-size: 15px;
+      margin-bottom: 10px;
+      transition: var(--transition);
+    }
+
+    .footer-content a:hover,
+    .footer-content a:focus {
+      color: var(--secondary-color);
+    }
+
+    .footer-content input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      font-size: 14px;
+      background-color: #374151;
+      color: var(--footer-text);
+    }
+
+    .footer-content button {
+      width: 100%;
+      padding: 12px;
+      background-color: #3b82f6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .footer-content button:hover,
+    .footer-content button:focus {
+      background-color: var(--primary-color);
+    }
+
+    .social-icons a {
+      margin-right: 15px;
+      font-size: 20px;
+      color: var(--footer-text);
+      transition: var(--transition);
+    }
+
+    .social-icons a:hover,
+    .social-icons a:focus {
+      color: var(--secondary-color);
+      transform: scale(1.2);
+    }
+
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: var(--secondary-color);
+      color: #fff;
+      padding: 12px 18px;
+      border-radius: 50%;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+
+    .back-to-top:hover,
+    .back-to-top:focus {
+      background-color: #ea580c;
+      transform: translateY(-5px);
+    }
+
+    @media (max-width: 768px) {
+      .main-content {
+        flex-direction: column;
+      }
+
+      .team-grid,
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .header-content {
+        flex-wrap: wrap;
+        gap: 15px;
+      }
+
+      nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #3b82f6;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 20px;
+      }
+
+      nav ul.active {
+        display: flex;
+      }
+
+      nav ul li {
+        margin: 10px 0;
+      }
+
+      .hamburger {
+        display: block;
+      }
+
+      .search-bar {
+        margin: 20px auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-content">
+      <div class="logo">GetJob<span>Now</span></div>
+      <nav>
+        <ul>
+          <li><a href="index.html" onclick="smoothScroll('home')">Home</a></li>
+          <li><a href="jobspage.html" onclick="smoothScroll('jobs')">Jobs</a></li>
+          <li><a href="career-advice.html" onclick="smoothScroll('career-advice')">Career Advice</a></li>
+          <li><a href="reusme-tips.html" onclick="smoothScroll('resume-tips')">Resume Tips</a></li>
+          <li><a href="about.html" onclick="smoothScroll('about')">About</a></li>
+          <li><a href="contact.html" onclick="smoothScroll('contact')">Contact</a></li>
+        </ul>
+        <button class="theme-toggle" aria-label="Toggle Dark Mode" onclick="toggleTheme()">
+          <i class="fas fa-moon"></i>
+        </button>
+        <div class="hamburger" onclick="toggleMenu()">
+          <i class="fas fa-bars"></i>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="container">
+    <div class="search-bar">
+      <input type="text" placeholder="Search....." aria-label="Search">
+      <i class="fas fa-search"></i>
+      <div class="search-suggestions">
+        <a href="#">Job Search Tips</a>
+        <a href="#">Career Advice</a>
+        <a href="#">Resume Writing</a>
+        <a href="#">Interview Preparation</a>
+      </div>
+    </div>
+
+    <div class="ad-space" id="home">Premium Ad Space - 728x90 (Leaderboard)</div>
+
+    <div class="main-content">
+      <div class="content">
+        <section class="about-section" id="about">
+          <h2>About GetJobNow</h2>
+          <p>GetJobNow was founded in 2020 with a mission to empower job seekers and professionals to achieve their career goals. We provide a platform that connects individuals with meaningful employment opportunities, offers expert career advice, and delivers resources to help you succeed in today’s competitive job market.</p>
+          <p>Our vision is to create a world where everyone has access to the tools and knowledge they need to build a fulfilling career. Whether you’re just starting out, looking to switch industries, or aiming for a promotion, GetJobNow is here to support you every step of the way.</p>
+        </section>
+
+        <div class="ad-space">Premium Ad Space - 970x250 (Billboard)</div>
+
+        <section class="team-section">
+          <h2>Meet Our Team</h2>
+          <div class="team-grid">
+            <div class="team-member">
+              <img src="placeholder.png" alt="Sarah Johnson">
+              <h4>Sarah Johnson</h4>
+              <p>Founder & CEO</p>
+              <p>Sarah is passionate about helping people find their dream jobs and has over 15 years of experience in career coaching.</p>
+            </div>
+            <div class="team-member">
+              <img src="placeholder.png" alt="Michael Brown">
+              <h4>Michael Brown</h4>
+              <p>Head of Content</p>
+              <p>Michael leads our content team, ensuring our career advice is actionable, relevant, and up-to-date.</p>
+            </div>
+            <div class="team-member">
+              <img src="placeholder.png" alt="Emily Davis">
+              <h4>Emily Davis</h4>
+              <p>Lead Developer</p>
+              <p>Emily oversees the development of our platform, ensuring it’s user-friendly and reliable for all users.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="values-section">
+          <h2>Our Core Values</h2>
+          <div class="values-grid">
+            <div class="value-card">
+              <i class="fas fa-users"></i>
+              <h4>Empowerment</h4>
+              <p>We believe in empowering individuals with the knowledge and tools to take control of their career paths.</p>
+            </div>
+            <div class="value-card">
+              <i class="fas fa-lightbulb"></i>
+              <h4>Innovation</h4>
+              <p>We strive to innovate and improve our platform to meet the evolving needs of job seekers and professionals.</p>
+            </div>
+            <div class="value-card">
+              <i class="fas fa-heart"></i>
+              <h4>Integrity</h4>
+              <p>We operate with honesty and transparency, ensuring our users can trust the resources we provide.</p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="sidebar">
+        <div class="sidebar-section">
+          <h3>Popular Articles</h3>
+          <div class="popular-article">
+            <img src="placeholder.png" alt="5 Tips for Effective Job Interviews">
+            <div>
+              <h4>5 Tips for Effective Job Interviews</h4>
+              <p>June 8, 2025</p>
+            </div>
+          </div>
+          <div class="popular-article">
+            <img src="placeholder.png" alt="How to Build a Professional Network">
+            <div>
+              <h4>How to Build a Professional Network</h4>
+              <p>June 5, 2025</p>
+            </div>
+          </div>
+          <div class="popular-article">
+            <img src="placeholder.png" alt="Upskilling for the Future Job Market">
+            <div>
+              <h4>Upskilling for the Future Job Market</h4>
+              <p>June 2, 2025</p>
+            </div>
+          </div>
+        </div>
+        <div class="ad-space">Ad Space - 300x250 (Medium Rectangle)</div>
+        <div class="sidebar-section">
+          <h3>Subscribe to Our Newsletter</h3>
+          <p>Get the latest career advice delivered to your inbox.</p>
+          <input type="email" placeholder="Your email address" aria-label="Email address for newsletter">
+          <button onclick="subscribeNewsletter()">Subscribe</button>
+        </div>
+        <div class="ad-space">Ad Space - 300x600 (Half Page)</div>
+      </div>
+    </div>
+  </div>
+
+  <footer id="contact">
+    <div class="container footer-content">
+      <div>
+        <h3>GetJobNow</h3>
+        <p>Your ultimate resource for job search strategies, career advice, and professional development tips.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <p><a href="#home" onclick="smoothScroll('home')">Home</a></p>
+        <p><a href="#about" onclick="smoothScroll('about')">About Us</a></p>
+        <p><a href="#jobs" onclick="smoothScroll('jobs')">Job Search</a></p>
+        <p><a href="#career-advice" onclick="smoothScroll('career-advice')">Career Advice</a></p>
+        <p><a href="#contact" onclick="smoothScroll('contact')">Contact</a></p>
+      </div>
+      <div>
+        <h3>Categories</h3>
+        <p><a href="#resume-tips" onclick="smoothScroll('resume-tips')">Resume Tips</a></p>
+        <p><a href="#">Interview Preparation</a></p>
+        <p><a href="#">Career Development</a></p>
+        <p><a href="#">Workplace Success</a></p>
+        <p><a href="#">Job Market Trends</a></p>
+      </div>
+      <div>
+        <h3>Contact Us</h3>
+        <p><i class="fas fa-map-marker-alt"></i> 123 Career Street, Job City, 10001</p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:info@getjobnow.com">info@getjobnow.com</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+11234567890">+1 (123) 456-7890</a></p>
+        <h3 style="margin-top: 20px;">Newsletter</h3>
+        <input type="email" placeholder="Your email address" aria-label="Newsletter email address">
+        <button onclick="subscribeNewsletter()">Subscribe</button>
+      </div>
+    </div>
+  </footer>
+
+  <a href="#" class="back-to-top" aria-label="Back to top"><i class="fas fa-arrow-up"></i></a>
+
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector('nav ul');
+      menu.classList.toggle('active');
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const currentTheme = body.getAttribute('data-theme');
+      body.setAttribute('data-theme', currentTheme === 'dark' ? 'light' : 'dark');
+      localStorage.setItem('theme', body.getAttribute('data-theme'));
+      document.querySelector('.theme-toggle i').classList.toggle('fa-moon');
+      document.querySelector('.theme-toggle i').classList.toggle('fa-sun');
+    }
+
+    function smoothScroll(targetId) {
+      const target = document.getElementById(targetId);
+      window.scrollTo({
+        top: target.offsetTop - 80,
+        behavior: 'smooth'
+      });
+    }
+
+    function subscribeNewsletter() {
+      const emailInputs = document.querySelectorAll('input[type="email"]');
+      emailInputs.forEach(input => {
+        const email = input.value.trim();
+        if (email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+          alert('Thank you for subscribing!');
+          input.value = '';
+        } else if (email) {
+          alert('Please enter a valid email address.');
+        }
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.body.setAttribute('data-theme', savedTheme);
+      if (savedTheme === 'dark') {
+        document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
+      }
+    });
+  </script>
+</body>
+</html>
