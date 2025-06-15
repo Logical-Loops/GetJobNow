@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Learn about GetJobNow, our mission, team, and values. We’re here to help you find meaningful employment and advance your career.">
+  <meta name="description" content="Learn about GetJobNow, our mission, team, and values. We're here to help you find meaningful employment and advance your career.">
   <meta name="keywords" content="about getjobnow, career advice, job search platform, our mission, our team">
   <meta name="author" content="GetJobNow Team">
   <title>GetJobNow - About Us</title>
@@ -224,13 +224,12 @@
 
     .content {
       flex: 3;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .sidebar {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
+      display: none;
     }
 
     .about-section,
@@ -566,17 +565,9 @@
     </div>
   </header>
 
+ 
+
   <div class="container">
-    <div class="search-bar">
-      <input type="text" placeholder="Search....." aria-label="Search">
-      <i class="fas fa-search"></i>
-      <div class="search-suggestions">
-        <a href="#">Job Search Tips</a>
-        <a href="#">Career Advice</a>
-        <a href="#">Resume Writing</a>
-        <a href="#">Interview Preparation</a>
-      </div>
-    </div>
 
     <div class="ad-space" id="home">Premium Ad Space - 728x90 (Leaderboard)</div>
 
@@ -584,8 +575,8 @@
       <div class="content">
         <section class="about-section" id="about">
           <h2>About GetJobNow</h2>
-          <p>GetJobNow was founded in 2020 with a mission to empower job seekers and professionals to achieve their career goals. We provide a platform that connects individuals with meaningful employment opportunities, offers expert career advice, and delivers resources to help you succeed in today’s competitive job market.</p>
-          <p>Our vision is to create a world where everyone has access to the tools and knowledge they need to build a fulfilling career. Whether you’re just starting out, looking to switch industries, or aiming for a promotion, GetJobNow is here to support you every step of the way.</p>
+          <p>GetJobNow was founded in 2020 with a mission to empower job seekers and professionals to achieve their career goals. We provide a platform that connects individuals with meaningful employment opportunities, offers expert career advice, and delivers resources to help you succeed in today's competitive job market.</p>
+          <p>Our vision is to create a world where everyone has access to the tools and knowledge they need to build a fulfilling career. Whether you're just starting out, looking to switch industries, or aiming for a promotion, GetJobNow is here to support you every step of the way.</p>
         </section>
 
         <div class="ad-space">Premium Ad Space - 970x250 (Billboard)</div>
@@ -609,7 +600,7 @@
               <img src="placeholder.png" alt="Emily Davis">
               <h4>Emily Davis</h4>
               <p>Lead Developer</p>
-              <p>Emily oversees the development of our platform, ensuring it’s user-friendly and reliable for all users.</p>
+              <p>Emily oversees the development of our platform, ensuring it's user-friendly and reliable for all users.</p>
             </div>
           </div>
         </section>
@@ -634,41 +625,6 @@
             </div>
           </div>
         </section>
-      </div>
-
-      <div class="sidebar">
-        <div class="sidebar-section">
-          <h3>Popular Articles</h3>
-          <div class="popular-article">
-            <img src="placeholder.png" alt="5 Tips for Effective Job Interviews">
-            <div>
-              <h4>5 Tips for Effective Job Interviews</h4>
-              <p>June 8, 2025</p>
-            </div>
-          </div>
-          <div class="popular-article">
-            <img src="placeholder.png" alt="How to Build a Professional Network">
-            <div>
-              <h4>How to Build a Professional Network</h4>
-              <p>June 5, 2025</p>
-            </div>
-          </div>
-          <div class="popular-article">
-            <img src="placeholder.png" alt="Upskilling for the Future Job Market">
-            <div>
-              <h4>Upskilling for the Future Job Market</h4>
-              <p>June 2, 2025</p>
-            </div>
-          </div>
-        </div>
-        <div class="ad-space">Ad Space - 300x250 (Medium Rectangle)</div>
-        <div class="sidebar-section">
-          <h3>Subscribe to Our Newsletter</h3>
-          <p>Get the latest career advice delivered to your inbox.</p>
-          <input type="email" placeholder="Your email address" aria-label="Email address for newsletter">
-          <button onclick="subscribeNewsletter()">Subscribe</button>
-        </div>
-        <div class="ad-space">Ad Space - 300x600 (Half Page)</div>
       </div>
     </div>
   </div>

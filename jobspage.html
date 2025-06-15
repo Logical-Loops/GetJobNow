@@ -9,6 +9,7 @@
   <title>GetJobNow - Jobs</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
     :root {
       --primary-color: #1e3a8a;
@@ -546,6 +547,7 @@
       }
     }
   </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
@@ -585,27 +587,28 @@
     <div class="ad-space" id="home">Premium Ad Space - 728x90 (Leaderboard)</div>
 
     <section class="job-search-section" id="jobs">
-      <h2>Find Your Next Job</h2>
+      <h2>Find Your Dream Job</h2>
       <div class="filters">
-        <select aria-label="Job Type">
-          <option value="">Job Type</option>
-          <option value="full-time">Full-Time</option>
-          <option value="part-time">Part-Time</option>
+        <select name="category">
+          <option value="all">All Categories</option>
+          <option value="technology">Technology</option>
+          <option value="marketing">Marketing</option>
+          <option value="finance">Finance</option>
+          <option value="healthcare">Healthcare</option>
+        </select>
+        <select name="location">
+          <option value="all">All Locations</option>
+          <option value="new-york">New York</option>
+          <option value="san-francisco">San Francisco</option>
+          <option value="boston">Boston</option>
+          <option value="remote">Remote</option>
+        </select>
+        <select name="type">
+          <option value="all">All Types</option>
+          <option value="full-time">Full Time</option>
+          <option value="part-time">Part Time</option>
           <option value="contract">Contract</option>
           <option value="internship">Internship</option>
-        </select>
-        <select aria-label="Location">
-          <option value="">Location</option>
-          <option value="new-york">New York, NY</option>
-          <option value="san-francisco">San Francisco, CA</option>
-          <option value="remote">Remote</option>
-          <option value="london">London, UK</option>
-        </select>
-        <select aria-label="Experience Level">
-          <option value="">Experience Level</option>
-          <option value="entry">Entry Level</option>
-          <option value="mid">Mid Level</option>
-          <option value="senior">Senior Level</option>
         </select>
       </div>
     </section>
@@ -615,34 +618,92 @@
     <div class="main-content">
       <div class="content">
         <div class="job-listings">
-          <div class="job-card">
-            <h3>Software Engineer</h3>
-            <p>TechCorp Inc. • San Francisco, CA</p>
-            <span class="job-type">Full-Time</span>
-            <p>Posted: June 10, 2025</p>
-            <button onclick="alert('Application submitted!')">Apply Now</button>
+          <div class="job-listing" data-category="technology" data-location="new-york" data-type="full-time">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Tech Corp" class="company-logo">
+            <div class="job-content">
+              <h3>Senior Software Engineer</h3>
+              <p class="company">Tech Corp</p>
+              <p class="location">New York, NY</p>
+              <p class="description">We're looking for a Senior Software Engineer to join our growing team...</p>
+              <a href="#" class="apply-btn">Apply Now</a>
+            </div>
           </div>
-          <div class="job-card">
-            <h3>Marketing Manager</h3>
-            <p>BrandWorks • New York, NY</p>
-            <span class="job-type">Full-Time</span>
-            <p>Posted: June 8, 2025</p>
-            <button onclick="alert('Application submitted!')">Apply Now</button>
+
+          <div class="job-listing" data-category="marketing" data-location="san-francisco" data-type="full-time">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Innovate Inc" class="company-logo">
+            <div class="job-content">
+              <h3>Marketing Manager</h3>
+              <p class="company">Innovate Inc</p>
+              <p class="location">San Francisco, CA</p>
+              <p class="description">Join our marketing team to drive growth and brand awareness...</p>
+              <a href="#" class="apply-btn">Apply Now</a>
+            </div>
           </div>
-          <div class="ad-space">In-feed Ad Space - Native Format</div>
-          <div class="job-card">
-            <h3>Data Analyst</h3>
-            <p>Data Insights • Remote</p>
-            <span class="job-type">Contract</span>
-            <p>Posted: June 5, 2025</p>
-            <button onclick="alert('Application submitted!')">Apply Now</button>
+
+          <div class="job-listing" data-category="technology" data-location="remote" data-type="contract">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="WebSolutions" class="company-logo">
+            <div class="job-content">
+              <h3>Frontend Developer</h3>
+              <p class="company">WebSolutions</p>
+              <p class="location">Remote</p>
+              <p class="description">Looking for a skilled Frontend Developer for a 6-month contract...</p>
+              <a href="#" class="apply-btn">Apply Now</a>
+            </div>
           </div>
-          <div class="job-card">
-            <h3>Product Designer</h3>
-            <p>DesignPro • London, UK</p>
-            <span class="job-type">Full-Time</span>
-            <p>Posted: June 3, 2025</p>
-            <button onclick="alert('Application submitted!')">Apply Now</button>
+
+          <div class="job-listing" data-category="finance" data-location="boston" data-type="full-time">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Global Finance" class="company-logo">
+            <div class="job-content">
+              <h3>Financial Analyst</h3>
+              <p class="company">Global Finance</p>
+              <p class="location">Boston, MA</p>
+              <p class="description">Seeking an experienced Financial Analyst to join our investment team...</p>
+              <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="job-listing" data-category="healthcare" data-location="remote" data-type="part-time">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="HealthTech" class="company-logo">
+            <div class="job-content">
+              <h3>Telehealth Nurse</h3>
+              <p class="company">HealthTech</p>
+              <p class="location">Remote</p>
+              <p class="description">Join our telehealth team to provide virtual patient care...</p>
+              <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="job-listing" data-category="design" data-location="san-francisco" data-type="full-time">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Creative Studio" class="company-logo">
+            <div class="job-content">
+              <h3>UX/UI Designer</h3>
+              <p class="company">Creative Studio</p>
+              <p class="location">San Francisco, CA</p>
+              <p class="description">Looking for a talented UX/UI Designer to create beautiful digital experiences...</p>
+              <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="job-listing" data-category="technology" data-location="new-york" data-type="internship">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="TechStart" class="company-logo">
+            <div class="job-content">
+              <h3>Data Science Intern</h3>
+              <p class="company">TechStart</p>
+              <p class="location">New York, NY</p>
+              <p class="description">Exciting internship opportunity for aspiring data scientists...</p>
+              <a href="#" class="apply-btn">Apply Now</a>
+            </div>
+          </div>
+
+          <div class="job-listing" data-category="marketing" data-location="remote" data-type="contract">
+            <img src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Digital Marketing Pro" class="company-logo">
+            <div class="job-content">
+              <h3>Social Media Manager</h3>
+              <p class="company">Digital Marketing Pro</p>
+              <p class="location">Remote</p>
+              <p class="description">Seeking a creative Social Media Manager for a 3-month project...</p>
+              <a href="#" class="apply-btn">Apply Now</a>
+            </div>
           </div>
         </div>
         <div class="pagination">

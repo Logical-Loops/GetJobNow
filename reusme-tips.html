@@ -142,7 +142,7 @@
     .search-bar {
       width: 100%;
       max-width: 600px;
-      margin: 30px auto;
+      margin: 20px auto;
       position: relative;
     }
 
@@ -257,37 +257,84 @@
       gap: 25px;
     }
 
-    .tip-card,
-    .example-card,
-    .template-card {
+    .resume-tip-card {
       background-color: var(--card-bg);
-      border-radius: 12px;
+      border-radius: 16px;
       box-shadow: var(--shadow);
-      padding: 20px;
+      overflow: hidden;
       transition: var(--transition);
+      position: relative;
+      border: 1px solid var(--border-color);
+      margin-bottom: 30px;
     }
 
-    .tip-card:hover,
-    .example-card:hover,
-    .template-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    .resume-tip-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
     }
 
-    .tip-card h3,
-    .example-card h3,
-    .template-card h3 {
-      font-size: 18px;
-      margin-bottom: 10px;
-      color: var(--text-color);
+    .resume-tip-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
     }
 
-    .tip-card p,
-    .example-card p,
-    .template-card p {
+    .resume-tip-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .resume-tip-card .category {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 8px 16px;
+      border-radius: 25px;
       font-size: 14px;
+      font-weight: 600;
+      z-index: 1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      background-color: var(--secondary-color);
+      color: #fff;
+    }
+
+    .resume-tip-card h2 {
+      font-size: 22px;
+      margin: 20px 20px 15px;
       color: var(--text-color);
-      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+
+    .resume-tip-card p {
+      margin: 0 20px 20px;
+      color: var(--text-color);
+      font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.9;
+    }
+
+    .resume-tip-card a {
+      display: inline-block;
+      margin: 0 20px 20px;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 15px;
+      transition: var(--transition);
+      text-decoration: none;
+    }
+
+    .resume-tip-card a:hover {
+      color: var(--secondary-color);
+    }
+
+    .resume-tip-card a::after {
+      content: '→';
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .resume-tip-card a:hover::after {
+      transform: translateX(5px);
     }
 
     .example-card img,
@@ -394,7 +441,19 @@
       width: 70px;
       height: 70px;
       border-radius: 8px;
-      background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+      object-fit: cover;
+    }
+
+    .popular-article h4 {
+      font-size: 16px;
+      margin-bottom: 5px;
+      color: var(--text-color);
+    }
+
+    .popular-article p {
+      font-size: 14px;
+      color: var(--ad-text);
+      margin: 0;
     }
 
     footer {
@@ -530,6 +589,27 @@
         margin: 20px auto;
       }
     }
+
+    /* Hero Section */
+    .hero-section {
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -555,6 +635,13 @@
     </div>
   </header>
 
+  <section class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+    <div class="container">
+      <h1>Resume Writing Tips</h1>
+      <p>Learn how to create a compelling resume that stands out to employers</p>
+    </div>
+  </section>
+
   <div class="container">
     <div class="search-bar">
       <input type="text" placeholder="Search resume tips....." aria-label="Search resume tips">
@@ -571,85 +658,50 @@
 
     <div class="main-content">
       <div class="content">
-        <section class="resume-tips-section" id="resume-tips">
-          <h2>Resume Tips for Success</h2>
-          <div class="tips-list">
-            <div class="tip-card">
-              <h3>Use Simple Formatting</h3>
-              <p>Keep your resume clean and simple to ensure it’s ATS-friendly. Avoid headers, footers, and complex graphics that might confuse applicant tracking systems.</p>
-            </div>
-            <div class="tip-card">
-              <h3>Incorporate Keywords</h3>
-              <p>Tailor your resume with keywords from the job description. This increases your chances of passing ATS filters and getting noticed by recruiters.</p>
-            </div>
-            <div class="tip-card">
-              <h3>Focus on Achievements</h3>
-              <p>Highlight measurable achievements rather than just listing duties. Use numbers to show impact, like “Increased sales by 20%” or “Managed a team of 10.”</p>
-            </div>
-            <div class="tip-card">
-              <h3>Keep It Concise</h3>
-              <p>Aim for a one-page resume if you have less than 10 years of experience. Be concise and relevant, focusing on your most recent and impactful roles.</p>
-            </div>
-          </div>
-        </section>
+        <article class="resume-tip-card">
+          <img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Resume Format">
+          <span class="category">Resume Format</span>
+          <h2>Choosing the Right Resume Format</h2>
+          <p>Learn about different resume formats and how to choose the one that best highlights your experience and skills for your target position.</p>
+          <a href="#">Read More</a>
+        </article>
 
-        <div class="ad-space">Premium Ad Space - 970x250 (Billboard)</div>
+        <article class="resume-tip-card">
+          <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Resume Writing">
+          <span class="category">Resume Writing</span>
+          <h2>Writing Effective Resume Bullet Points</h2>
+          <p>Master the art of writing compelling bullet points that showcase your achievements and make your resume stand out to employers.</p>
+          <a href="#">Read More</a>
+        </article>
 
-        <section class="resume-examples-section">
-          <h2>Basic Resume Examples</h2>
-          <div class="examples-grid">
-            <div class="example-card">
-              <img src="placeholder.png" alt="Entry-Level Resume Example">
-              <h3>Entry-Level Resume</h3>
-              <p>A clean, ATS-friendly resume for recent graduates or those new to the job market, focusing on education, skills, and internships.</p>
-            </div>
-            <div class="example-card">
-              <img src="placeholder.png" alt="Professional Resume Example">
-              <h3>Professional Resume</h3>
-              <p>A structured resume for mid-career professionals, highlighting experience, achievements, and relevant skills in a simple format.</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="templates-section">
-          <h2>Free ATS Resume Templates</h2>
-          <p>Download our free ATS-friendly resume templates in Microsoft Word format to create a professional resume that stands out to recruiters and passes applicant tracking systems.</p>
-          <div class="templates-grid">
-            <div class="template-card">
-              <img src="placeholder.png" alt="Basic ATS Resume Template">
-              <h3>Basic ATS Resume Template</h3>
-              <p>A minimalist, ATS-optimized template perfect for all career levels. Easy to edit in Microsoft Word.</p>
-              <a href="/templates/basic-ats-resume-template.docx" download>Download Now</a>
-            </div>
-            <div class="template-card">
-              <img src="placeholder.png" alt="Modern ATS Resume Template">
-              <h3>Modern ATS Resume Template</h3>
-              <p>A sleek, ATS-friendly template with a modern layout, ideal for creative industries. Editable in Microsoft Word.</p>
-              <a href="/templates/modern-ats-resume-template.docx" download>Download Now</a>
-            </div>
-          </div>
-        </section>
+        <article class="resume-tip-card">
+          <img src="https://images.unsplash.com/photo-1586281380117-5a60ae2050cc?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Resume Keywords">
+          <span class="category">ATS Optimization</span>
+          <h2>Optimizing Your Resume for ATS</h2>
+          <p>Learn how to use keywords effectively to pass Applicant Tracking Systems and get your resume in front of hiring managers.</p>
+          <a href="#">Read More</a>
+        </article>
       </div>
 
       <div class="sidebar">
         <div class="sidebar-section">
           <h3>Popular Articles</h3>
           <div class="popular-article">
-            <img src="placeholder.png" alt="5 Tips for Effective Job Interviews">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="5 Tips for Effective Job Interviews">
             <div>
               <h4>5 Tips for Effective Job Interviews</h4>
               <p>June 8, 2025</p>
             </div>
           </div>
           <div class="popular-article">
-            <img src="placeholder.png" alt="How to Build a Professional Network">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="How to Build a Professional Network">
             <div>
               <h4>How to Build a Professional Network</h4>
               <p>June 5, 2025</p>
             </div>
           </div>
           <div class="popular-article">
-            <img src="placeholder.png" alt="Upskilling for the Future Job Market">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Upskilling for the Future Job Market">
             <div>
               <h4>Upskilling for the Future Job Market</h4>
               <p>June 2, 2025</p>

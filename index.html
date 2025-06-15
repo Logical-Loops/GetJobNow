@@ -9,6 +9,7 @@
   <title>GetJobNow - Job Search & Career Advice</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
   <style>
     :root {
       --primary-color: #1e3a8a;
@@ -259,6 +260,7 @@
       box-shadow: var(--shadow);
       overflow: hidden;
       transition: var(--transition);
+      margin-bottom: 30px;
     }
 
     .post-card:hover,
@@ -299,6 +301,12 @@
     .post-card h3,
     .popular-post h4 {
       font-size: 20px;
+      margin: 0 15px 15px;
+      color: var(--text-color);
+    }
+
+    .post-card h2 {
+      font-size: 24px;
       margin: 0 15px 15px;
       color: var(--text-color);
     }
@@ -344,6 +352,12 @@
       justify-content: center;
       gap: 12px;
       margin: 30px 0;
+    }
+
+    .page-numbers {
+      display: flex;
+      gap: 12px;
+      align-items: center;
     }
 
     .pagination a {
@@ -548,30 +562,71 @@
         margin: 20px auto;
       }
     }
+
+    /* .featured-companies {
+      overflow: hidden;
+      gap: 20px;
+    } */
+
+    .companies-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .companies-track {
+      display: flex;
+      animation: scroll 30s linear infinite;
+      gap: 20px;
+    }
+
+    .companies-track:hover {
+      animation-play-state: paused;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
   </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
   <header>
-    <div class="container header-content">
-      <div class="logo">GetJob<span>Now</span></div>
-      <nav>
-        <ul>
-          <li><a href="index.html" onclick="smoothScroll('home')">Home</a></li>
-          <li><a href="jobspage.html" onclick="smoothScroll('jobs')">Jobs</a></li>
-          <li><a href="career-advice.html" onclick="smoothScroll('career-advice')">Career Advice</a></li>
-          <li><a href="reusme-tips.html" onclick="smoothScroll('resume-tips')">Resume Tips</a></li>
-          <li><a href="about.html" onclick="smoothScroll('about')">About</a></li>
-          <li><a href="contact.html" onclick="smoothScroll('contact')">Contact</a></li>
-        </ul>
-        <button class="theme-toggle" aria-label="Toggle Dark Mode" onclick="toggleTheme()">
-          <i class="fas fa-moon"></i>
-        </button>
-        <div class="hamburger" onclick="toggleMenu()">
-          <i class="fas fa-bars"></i>
-        </div>
-      </nav>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">GetJob<span>Now</span></div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobspage.html">Jobs</a></li>
+            <li><a href="career-advice.html">Career Advice</a></li>
+            <li><a href="reusme-tips.html">Resume Tips</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <button class="theme-toggle">
+            <i class="fas fa-moon"></i>
+          </button>
+          <div class="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+        </nav>
+      </div>
     </div>
   </header>
+
+  <section class="hero-section">
+    <div class="container">
+      <h1>Find Your Dream Job Today</h1>
+      <p>Discover thousands of job opportunities with top companies around the world</p>
+    </div>
+  </section>
 
   <div class="container">
     <div class="search-bar">
@@ -591,32 +646,29 @@
       <h2>Featured Posts</h2>
       <div class="post-grid">
         <div class="post-card">
-          <img src="placeholder.png" alt="10 Skills Every Job Seeker Needs in 2023">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="10 Skills Every Job Seeker Needs in 2023">
           <span class="category career">Career Advice</span>
           <h3>10 Skills Every Job Seeker Needs in 2023</h3>
           <div class="post-meta">
             <i class="fas fa-user-circle"></i>
-            <span>Sarah Johnson</span>
             <span>June 15, 2023</span>
           </div>
         </div>
         <div class="post-card">
-          <img src="placeholder.png" alt="How to Write a Resume That Gets Noticed">
+          <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="How to Write a Resume That Gets Noticed">
           <span class="category resume">Resume Tips</span>
           <h3>How to Write a Resume That Gets Noticed</h3>
           <div class="post-meta">
             <i class="fas fa-user-circle"></i>
-            <span>Michael Brown</span>
             <span>June 10, 2023</span>
           </div>
         </div>
         <div class="post-card">
-          <img src="placeholder.png" alt="5 Common Interview Questions & How to Answer">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="5 Common Interview Questions & How to Answer">
           <span class="category interview">Interview Tips</span>
           <h3>5 Common Interview Questions & How to Answer</h3>
           <div class="post-meta">
             <i class="fas fa-user-circle"></i>
-            <span>Emily Davis</span>
             <span>June 5, 2023</span>
           </div>
         </div>
@@ -628,36 +680,120 @@
     <div class="main-content">
       <div class="content" id="resume-tips">
         <div class="post-card">
-          <img src="placeholder.png" alt="Resume Keywords: How to Get Past Applicant Tracking Systems">
+          <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Resume Keywords: How to Get Past Applicant Tracking Systems">
           <span class="category resume">Resume Tips</span>
           <h2>Resume Keywords: How to Get Past Applicant Tracking Systems</h2>
           <p>Understand how applicant tracking systems work and learn strategies for optimizing your resume with the right keywords. Includes industry-specific keyword examples and formatting tips.</p>
           <div class="post-meta">
             <i class="fas fa-user-circle"></i>
-            <span>Jennifer Adams</span>
             <span>June 15, 2023</span>
           </div>
           <a href="#">Read More →</a>
         </div>
         <div class="ad-space">In-feed Ad Space - Native Format</div>
         <div class="post-card">
-          <img src="placeholder.png" alt="The Ultimate Guide to Negotiating Your Salary">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="The Ultimate Guide to Negotiating Your Salary">
           <span class="category career">Career Development</span>
           <h2>The Ultimate Guide to Negotiating Your Salary</h2>
           <p>Learn proven techniques for negotiating a higher salary, whether you're starting a new job or asking for a raise. Discover how to research market rates and present your case.</p>
           <div class="post-meta">
             <i class="fas fa-user-circle"></i>
-            <span>Robert Wilson</span>
             <span>June 18, 2023</span>
           </div>
           <a href="#">Read More →</a>
         </div>
+        <div class="post-card">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Remote Work Success Strategies">
+          <span class="category career">Remote Work</span>
+          <h2>Remote Work Success Strategies</h2>
+          <p>Master the art of remote work with proven strategies for productivity, communication, and work-life balance. Learn how to thrive in a virtual work environment.</p>
+          <div class="post-meta">
+            <i class="fas fa-user-circle"></i>
+            <span>June 20, 2023</span>
+          </div>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="post-card">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Building a Personal Brand">
+          <span class="category career">Personal Branding</span>
+          <h2>Building a Personal Brand</h2>
+          <p>Learn how to create and maintain a strong personal brand that will help you stand out in your industry and attract better career opportunities.</p>
+          <div class="post-meta">
+            <i class="fas fa-user-circle"></i>
+            <span>June 22, 2023</span>
+          </div>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="post-card">
+          <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Career Change Guide">
+          <span class="category career">Career Change</span>
+          <h2>Career Change Guide: Making a Successful Transition</h2>
+          <p>Thinking about changing careers? Learn the step-by-step process to make a successful transition, from identifying transferable skills to building a new network.</p>
+          <div class="post-meta">
+            <i class="fas fa-user-circle"></i>  
+            <span>June 25, 2023</span>
+          </div>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="post-card">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Leadership Skills">
+          <span class="category career">Leadership</span>
+          <h2>Essential Leadership Skills for Career Growth</h2>
+          <p>Discover the key leadership skills that can accelerate your career growth and help you move into management positions. Includes practical exercises and real-world examples.</p>
+          <div class="post-meta">
+            <i class="fas fa-user-circle"></i>  
+            <span>June 28, 2023</span>
+          </div>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="post-card">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Workplace Communication">
+          <span class="category career">Communication</span>
+          <h2>Effective Workplace Communication Strategies</h2>
+          <p>Master the art of professional communication in the workplace. Learn how to express ideas clearly, handle difficult conversations, and build strong professional relationships.</p>
+          <div class="post-meta">
+            <i class="fas fa-user-circle"></i>  
+            <span>July 1, 2023</span>
+          </div>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="post-card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Career Planning">
+          <span class="category career">Career Planning</span>
+          <h2>Strategic Career Planning: A 5-Year Roadmap</h2>
+          <p>Create a comprehensive career development plan that aligns with your long-term goals. Learn how to set milestones, track progress, and make informed career decisions.</p>
+          <div class="post-meta">
+            <i class="fas fa-user-circle"></i>  
+            <span>July 3, 2023</span>
+          </div>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="post-card">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Work-Life Balance">
+          <span class="category career">Work-Life Balance</span>
+          <h2>Maintaining Work-Life Balance in a Digital Age</h2>
+          <p>Discover practical strategies for managing your professional and personal life in today's always-connected world. Learn how to set boundaries and prevent burnout.</p>
+          <div class="post-meta">
+            <i class="fas fa-user-circle"></i>  
+            <span>July 5, 2023</span>
+          </div>
+          <a href="#">Read More →</a>
+        </div>
+        <div class="post-card">
+          <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Professional Development">
+          <span class="category career">Professional Development</span>
+          <h2>Continuous Learning: Staying Relevant in Your Industry</h2>
+          <p>Explore effective ways to keep your skills current and stay competitive in your field. Learn about valuable resources and strategies for ongoing professional development.</p>
+          <div class="post-meta">
+            <i class="fas fa-user-circle"></i>  
+            <span>July 7, 2023</span>
+          </div>
+          <a href="#">Read More →</a>
+        </div>
         <div class="pagination">
-          <a href="#" aria-label="Previous page">←</a>
-          <a href="#" class="active" aria-label="Page 1">1</a>
-          <a href="#" aria-label="Page 2">2</a>
-          <a href="#" aria-label="Page 3">3</a>
-          <a href="#" aria-label="Next page">→</a>
+          <a href="#" class="prev-page" aria-label="Previous page">←</a>
+          <div class="page-numbers"></div>
+          <a href="#" class="next-page" aria-label="Next page">→</a>
         </div>
       </div>
 
@@ -670,21 +806,21 @@
         <div class="sidebar-section">
           <h3>Popular Posts</h3>
           <div class="popular-post">
-            <img src="placeholder.png" alt="7 Remote Job Interview Tips You Need to Know">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="7 Remote Job Interview Tips You Need to Know">
             <div>
               <h4>7 Remote Job Interview Tips You Need to Know</h4>
               <p>June 8, 2023</p>
             </div>
           </div>
           <div class="popular-post">
-            <img src="placeholder.png" alt="How to Write a Cover Letter That Results">
+            <img src="https://images.unsplash.com/photo-1586281380349-632531db7ed4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="How to Write a Cover Letter That Results">
             <div>
               <h4>How to Write a Cover Letter That Results</h4>
               <p>May 30, 2023</p>
             </div>
           </div>
           <div class="popular-post">
-            <img src="placeholder.png" alt="Networking for Introverts: A Step-by-Step Guide">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Networking for Introverts: A Step-by-Step Guide">
             <div>
               <h4>Networking for Introverts: A Step-by-Step Guide</h4>
               <p>May 22, 2023</p>
@@ -701,6 +837,73 @@
       </div>
     </div>
   </div>
+
+  <section class="featured-companies">
+    <div class="companies-container">
+      <div class="companies-track">
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/google.com" alt="Google" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/microsoft.com" alt="Microsoft" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/apple.com" alt="Apple" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+            <img src="https://logo.clearbit.com/meta.com" alt="Meta" height="50px" width="50px">  
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/netflix.com" alt="Netflix" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/tesla.com" alt="Tesla" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/adobe.com" alt="Adobe" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/google.com" alt="Google" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/amazon.com" alt="Amazon" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/apple.com" alt="Apple" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/government.com" alt="Government" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/tata.com" alt="Tata" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/hdfc.com" alt="HDFC" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+            <img src="https://logo.clearbit.com/kotak.com" alt="Kotak" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/infosys.com" alt="Infosys" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/redhat.com" alt="Redhat" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/reliance.com" alt="Reliance" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+            <img src="https://logo.clearbit.com/samsung.com" alt="Samsung" height="50px" width="50px">
+        </div>
+        <div class="company-card">
+          <img src="https://logo.clearbit.com/sony.com" alt="Sony" height="50px" width="50px">
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer id="contact">
     <div class="container footer-content">
@@ -786,6 +989,73 @@
       if (savedTheme === 'dark') {
         document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
       }
+    });
+
+    // Pagination functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const postsPerPage = 5;
+      const postCards = document.querySelectorAll('.content .post-card');
+      const totalPages = Math.ceil(postCards.length / postsPerPage);
+      const pagination = document.querySelector('.pagination');
+      const pageNumbersContainer = document.querySelector('.page-numbers');
+      
+      // Generate page numbers dynamically
+      function generatePageNumbers() {
+        pageNumbersContainer.innerHTML = '';
+        for (let i = 1; i <= totalPages; i++) {
+          const pageLink = document.createElement('a');
+          pageLink.href = '#';
+          pageLink.classList.add('page-number');
+          pageLink.dataset.page = i;
+          pageLink.textContent = i;
+          pageNumbersContainer.appendChild(pageLink);
+        }
+      }
+      
+      function showPage(pageNumber) {
+        const start = (pageNumber - 1) * postsPerPage;
+        const end = start + postsPerPage;
+        
+        postCards.forEach((card, index) => {
+          if (index >= start && index < end) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+        
+        // Update active page in pagination
+        document.querySelectorAll('.page-number').forEach(link => {
+          link.classList.remove('active');
+          if (link.dataset.page == pageNumber) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      // Initialize pagination
+      generatePageNumbers();
+      showPage(1);
+      
+      // Add click handlers for pagination
+      pagination.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        if (e.target.classList.contains('page-number')) {
+          const pageNumber = parseInt(e.target.dataset.page);
+          showPage(pageNumber);
+        } else if (e.target.classList.contains('prev-page')) {
+          const currentPage = parseInt(document.querySelector('.page-number.active').dataset.page);
+          if (currentPage > 1) {
+            showPage(currentPage - 1);
+          }
+        } else if (e.target.classList.contains('next-page')) {
+          const currentPage = parseInt(document.querySelector('.page-number.active').dataset.page);
+          if (currentPage < totalPages) {
+            showPage(currentPage + 1);
+          }
+        }
+      });
     });
   </script>
 </body>

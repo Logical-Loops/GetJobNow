@@ -142,7 +142,7 @@
     .search-bar {
       width: 100%;
       max-width: 600px;
-      margin: 30px auto;
+      margin: 20px auto;
       position: relative;
     }
 
@@ -252,37 +252,47 @@
       gap: 25px;
     }
 
-    .advice-card,
-    .popular-advice {
+    .advice-card {
       background-color: var(--card-bg);
-      border-radius: 12px;
+      border-radius: 16px;
       box-shadow: var(--shadow);
       overflow: hidden;
       transition: var(--transition);
+      position: relative;
+      border: 1px solid var(--border-color);
+      margin-bottom: 30px;
     }
 
-    .advice-card:hover,
-    .popular-advice:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    .advice-card:last-child {
+      margin-bottom: 0;
     }
 
-    .advice-card img,
-    .popular-advice img {
+    .advice-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .advice-card img {
       width: 100%;
-      height: 180px;
-      background: linear-gradient(135deg, #e5e7eb, #d1d5db);
+      height: 220px;
       object-fit: cover;
+      transition: transform 0.5s ease;
     }
 
-    .advice-card .category,
-    .popular-advice .category {
-      display: inline-block;
-      padding: 6px 12px;
-      margin: 15px;
-      border-radius: 20px;
-      font-size: 13px;
+    .advice-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .advice-card .category {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      padding: 8px 16px;
+      border-radius: 25px;
+      font-size: 14px;
       font-weight: 600;
+      z-index: 1;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .advice-card .category.job-search {
@@ -290,77 +300,122 @@
       color: #fff;
     }
 
-    .advice-card .category.career-growth,
-    .advice-card .category.skills {
+    .advice-card .category.career-growth {
       background-color: #3b82f6;
       color: #fff;
     }
 
-    .advice-card h3,
-    .popular-advice h4 {
-      font-size: 20px;
-      margin: 0 15px 15px;
+    .advice-card .category.skills {
+      background-color: #10b981;
+      color: #fff;
+    }
+
+    .advice-card h3 {
+      font-size: 22px;
+      margin: 20px 20px 15px;
       color: var(--text-color);
+      line-height: 1.4;
     }
 
     .advice-meta {
       display: flex;
       align-items: center;
-      margin: 0 15px 15px;
+      margin: 0 20px 20px;
       color: var(--ad-text);
       font-size: 14px;
+      gap: 15px;
     }
 
     .advice-meta i {
-      margin-right: 8px;
-      color: var(--ad-text);
+      color: var(--secondary-color);
     }
 
     .advice-meta span {
-      margin-right: 10px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
     }
 
-    .advice-card p,
-    .popular-advice p {
-      margin: 0 15px 15px;
+    .advice-card p {
+      margin: 0 20px 20px;
       color: var(--text-color);
       font-size: 15px;
+      line-height: 1.6;
+      opacity: 0.9;
     }
 
     .advice-card a {
       display: inline-block;
-      margin: 0 15px 15px;
-      color: #3b82f6;
-      font-weight: 500;
+      margin: 0 20px 20px;
+      color: var(--primary-color);
+      font-weight: 600;
+      font-size: 15px;
       transition: var(--transition);
+      text-decoration: none;
     }
 
     .advice-card a:hover {
-      color: var(--primary-color);
+      color: var(--secondary-color);
+    }
+
+    .advice-card a::after {
+      content: '→';
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    .advice-card a:hover::after {
+      transform: translateX(5px);
     }
 
     .pagination {
       display: flex;
       justify-content: center;
-      gap: 12px;
-      margin: 30px 0;
+      align-items: center;
+      gap: 15px;
+      margin: 40px 0;
+    }
+
+    .pagination .page-numbers {
+      display: flex;
+      gap: 8px;
+      align-items: center;
     }
 
     .pagination a {
-      padding: 10px 18px;
+      padding: 8px 16px;
       border: 1px solid var(--border-color);
-      border-radius: 8px;
+      border-radius: 6px;
       color: var(--text-color);
       font-weight: 500;
       transition: var(--transition);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
     }
 
-    .pagination a.active,
     .pagination a:hover,
-    .pagination a:focus {
-      background-color: #3b82f6;
+    .pagination a.active {
+      background-color: var(--primary-color);
       color: #fff;
-      border-color: #3b82f6;
+      border-color: var(--primary-color);
+    }
+
+    .pagination span {
+      color: var(--text-color);
+      font-weight: 500;
+    }
+
+    .pagination .prev,
+    .pagination .next {
+      background-color: var(--card-bg);
+    }
+
+    .pagination .prev:hover,
+    .pagination .next:hover {
+      background-color: var(--primary-color);
+      color: #fff;
     }
 
     .sidebar-section {
@@ -567,6 +622,27 @@
         margin: 20px auto;
       }
     }
+
+    /* Hero Section */
+    .hero-section {
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 100px 0;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-section h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+
+    .hero-section p {
+      font-size: 20px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
   </style>
 </head>
 <body>
@@ -592,6 +668,13 @@
     </div>
   </header>
 
+  <section class="hero-section" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');">
+    <div class="container">
+      <h1>Career Advice & Resources</h1>
+      <p>Expert guidance to help you navigate your career path and achieve your professional goals</p>
+    </div>
+  </section>
+
   <div class="container">
     <div class="search-bar">
       <input type="text" placeholder="Search career advice....." aria-label="Search career advice">
@@ -610,7 +693,7 @@
       <h2>Featured Career Advice</h2>
       <div class="advice-grid">
         <div class="advice-card">
-          <img src="placeholder.png" alt="How to Land Your Dream Job in 2025">
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="How to Land Your Dream Job in 2025">
           <span class="category job-search">Job Search</span>
           <h3>How to Land Your Dream Job in 2025</h3>
           <div class="advice-meta">
@@ -618,9 +701,11 @@
             <span>Laura Smith</span>
             <span>June 15, 2025</span>
           </div>
+          <p>Discover proven strategies and techniques to stand out in today's competitive job market and secure your dream position.</p>
+          <a href="#">Read More</a>
         </div>
         <div class="advice-card">
-          <img src="placeholder.png" alt="Top Skills to Boost Your Career Growth">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Top Skills to Boost Your Career Growth">
           <span class="category career-growth">Career Growth</span>
           <h3>Top Skills to Boost Your Career Growth</h3>
           <div class="advice-meta">
@@ -628,9 +713,11 @@
             <span>David Miller</span>
             <span>June 12, 2025</span>
           </div>
+          <p>Learn about the most in-demand skills that will help you advance your career and stay competitive in the evolving job market.</p>
+          <a href="#">Read More</a>
         </div>
         <div class="advice-card">
-          <img src="placeholder.png" alt="Why Networking is Key to Career Success">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Why Networking is Key to Career Success">
           <span class="category skills">Skills Development</span>
           <h3>Why Networking is Key to Career Success</h3>
           <div class="advice-meta">
@@ -638,6 +725,8 @@
             <span>Emma Wilson</span>
             <span>June 10, 2025</span>
           </div>
+          <p>Master the art of professional networking and learn how to build meaningful connections that can accelerate your career growth.</p>
+          <a href="#">Read More</a>
         </div>
       </div>
     </section>
@@ -647,36 +736,93 @@
     <div class="main-content">
       <div class="content">
         <div class="advice-card">
-          <img src="placeholder.png" alt="Navigating a Career Change: A Step-by-Step Guide">
-          <span class="category career-growth">Career Growth</span>
-          <h2>Navigating a Career Change: A Step-by-Step Guide</h2>
-          <p>Thinking about switching careers? This guide covers everything from self-assessment to building new skills and finding opportunities in a new field.</p>
+          <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Interview Preparation">
+          <span class="category job-search">Interview Tips</span>
+          <h3>Mastering the Art of Job Interviews</h3>
           <div class="advice-meta">
             <i class="fas fa-user-circle"></i>
-            <span>James Carter</span>
+            <span>Sarah Johnson</span>
+            <span>June 20, 2025</span>
+          </div>
+          <p>Learn proven techniques to ace your job interviews, from preparation to follow-up. Discover how to handle tough questions and make a lasting impression.</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div class="ad-space">In-feed Ad Space - Native Format</div>
+
+        <div class="advice-card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Career Growth">
+          <span class="category career-growth">Career Growth</span>
+          <h3>Strategic Career Planning for 2025</h3>
+          <div class="advice-meta">
+            <i class="fas fa-user-circle"></i>
+            <span>Michael Chen</span>
+            <span>June 18, 2025</span>
+          </div>
+          <p>Create a roadmap for your career success with our comprehensive guide to strategic career planning and professional development.</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div class="advice-card">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Networking">
+          <span class="category skills">Networking</span>
+          <h3>Building Your Professional Network</h3>
+          <div class="advice-meta">
+            <i class="fas fa-user-circle"></i>
+            <span>Emily Rodriguez</span>
             <span>June 15, 2025</span>
           </div>
-          <a href="#">Read More →</a>
+          <p>Discover effective strategies for building and maintaining a strong professional network that can open doors to new opportunities.</p>
+          <a href="#">Read More</a>
         </div>
-        <div class="ad-space">In-feed Ad Space - Native Format</div>
+
         <div class="advice-card">
-          <img src="placeholder.png" alt="How to Ask for a Promotion Without Feeling Awkward">
-          <span class="category career-growth">Career Growth</span>
-          <h2>How to Ask for a Promotion Without Feeling Awkward</h2>
-          <p>Learn how to confidently approach your boss for a promotion, including tips on timing, preparation, and presenting your achievements effectively.</p>
+          <img src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Career Change">
+          <span class="category career-growth">Career Change</span>
+          <h3>Making a Successful Career Transition</h3>
           <div class="advice-meta">
             <i class="fas fa-user-circle"></i>
-            <span>Sophia Lee</span>
-            <span>June 13, 2025</span>
+            <span>David Kim</span>
+            <span>June 12, 2025</span>
           </div>
-          <a href="#">Read More →</a>
+          <p>Learn how to successfully navigate a career change, from identifying transferable skills to building a new professional identity.</p>
+          <a href="#">Read More</a>
         </div>
+
+        <div class="advice-card">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Workplace Success">
+          <span class="category skills">Workplace Success</span>
+          <h3>Thriving in Your Workplace</h3>
+          <div class="advice-meta">
+            <i class="fas fa-user-circle"></i>
+            <span>Lisa Thompson</span>
+            <span>June 10, 2025</span>
+          </div>
+          <p>Master essential workplace skills and strategies to excel in your current role and position yourself for future growth.</p>
+          <a href="#">Read More</a>
+        </div>
+
+        <div class="advice-card">
+          <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Leadership">
+          <span class="category career-growth">Leadership</span>
+          <h3>Developing Leadership Skills</h3>
+          <div class="advice-meta">
+            <i class="fas fa-user-circle"></i>
+            <span>James Wilson</span>
+            <span>June 8, 2025</span>
+          </div>
+          <p>Build essential leadership skills that will help you advance in your career and become an effective team leader.</p>
+          <a href="#">Read More</a>
+        </div>
+
         <div class="pagination">
-          <a href="#" aria-label="Previous page">←</a>
-          <a href="#" class="active" aria-label="Page 1">1</a>
-          <a href="#" aria-label="Page 2">2</a>
-          <a href="#" aria-label="Page 3">3</a>
-          <a href="#" aria-label="Next page">→</a>
+          <a href="#" class="prev" aria-label="Previous page" onclick="changePage('prev')"><i class="fas fa-chevron-left"></i> Previous</a>
+          <div class="page-numbers">
+            <a href="#" class="active" onclick="changePage(1)">1</a>
+            <a href="#" onclick="changePage(2)">2</a>
+            <a href="#" onclick="changePage(3)">3</a>
+          </div>
+          <a href="#" class="next" aria-label="Next page" onclick="changePage('next')">Next <i class="fas fa-chevron-right"></i></a>
         </div>
       </div>
 
@@ -684,21 +830,21 @@
         <div class="sidebar-section">
           <h3>Popular Articles</h3>
           <div class="popular-advice">
-            <img src="placeholder.png" alt="5 Tips for Effective Job Interviews">
+            <img src="https://images.unsplash.com/photo-1553877522-43269d4ea984?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="5 Tips for Effective Job Interviews">
             <div>
               <h4>5 Tips for Effective Job Interviews</h4>
               <p>June 8, 2025</p>
             </div>
           </div>
           <div class="popular-advice">
-            <img src="placeholder.png" alt="How to Build a Professional Network">
+            <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="How to Build a Professional Network">
             <div>
               <h4>How to Build a Professional Network</h4>
               <p>June 5, 2025</p>
             </div>
           </div>
           <div class="popular-advice">
-            <img src="placeholder.png" alt="Upskilling for the Future Job Market">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Upskilling for the Future Job Market">
             <div>
               <h4>Upskilling for the Future Job Market</h4>
               <p>June 2, 2025</p>
@@ -805,12 +951,65 @@
       });
     }
 
+    // Pagination functionality
+    let currentPage = 1;
+    const cardsPerPage = 2;
+    const adviceCards = document.querySelectorAll('.advice-card');
+    const totalPages = Math.ceil(adviceCards.length / cardsPerPage);
+
+    function changePage(page) {
+      event.preventDefault();
+      
+      if (page === 'prev' && currentPage > 1) {
+        currentPage--;
+      } else if (page === 'next' && currentPage < totalPages) {
+        currentPage++;
+      } else if (typeof page === 'number') {
+        currentPage = page;
+      }
+
+      // Update active page in pagination
+      document.querySelectorAll('.page-numbers a').forEach((link, index) => {
+        if (index + 1 === currentPage) {
+          link.classList.add('active');
+        } else {
+          link.classList.remove('active');
+        }
+      });
+
+      // Show/hide cards based on current page
+      const adviceGrid = document.querySelector('.advice-grid');
+      const startIndex = (currentPage - 1) * cardsPerPage;
+      const endIndex = startIndex + cardsPerPage;
+      
+      // Clear the grid
+      adviceGrid.innerHTML = '';
+      
+      // Add visible cards to the grid
+      adviceCards.forEach((card, index) => {
+        if (index >= startIndex && index < endIndex) {
+          adviceGrid.appendChild(card.cloneNode(true));
+        }
+      });
+
+      // Update prev/next button states
+      const prevButton = document.querySelector('.pagination .prev');
+      const nextButton = document.querySelector('.pagination .next');
+      
+      prevButton.style.opacity = currentPage === 1 ? '0.5' : '1';
+      nextButton.style.opacity = currentPage === totalPages ? '0.5' : '1';
+    }
+
+    // Initialize pagination
     document.addEventListener('DOMContentLoaded', () => {
       const savedTheme = localStorage.getItem('theme') || 'light';
       document.body.setAttribute('data-theme', savedTheme);
       if (savedTheme === 'dark') {
         document.querySelector('.theme-toggle i').classList.replace('fa-moon', 'fa-sun');
       }
+      
+      // Show first page of cards
+      changePage(1);
     });
   </script>
 </body>
